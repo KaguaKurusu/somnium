@@ -1,0 +1,164 @@
+page-bg-color = #0f0f0f
+text-color = aliceblue
+toggle-off-color = text-color
+toggle-on-color = #05abe0
+toggle-inactive-text = rgba(white, 0.5)
+toggle-transition = cubic-bezier(0,1,0.5,1)
+font-stack = 'Kosugi Maru', sans-serif
+font-size = 16px
+
+*
+	box-sizing border-box
+	margin 0
+	padding 0
+
+body
+	font-family font-stack
+	font-size font-size
+	background page-bg-color
+	color text-color
+	user-select none
+	padding 10px
+
+input, button
+	font-family inherit
+	background page-bg-color
+	color text-color
+	appearance none
+
+input
+	&[type="url"], &[type="number"]
+		height 2em
+		padding 0 5px
+		border-radius 4px
+		border 1px solid #aaa
+		transition border .3s
+		transition box-shadow .3s
+		&:focus
+			outline 0
+			box-shadow 0 0 7px #0086d9
+			border 1px solid #0086d9
+	&[type="number"]::-webkit-inner-spin-button
+		cursor pointer
+		position relative
+		left 3px
+		height 28px
+		border-radius 4px
+
+fieldset
+	border none
+	legend ~ *
+		margin-left 10px
+
+button
+	background #f0f0f0
+	background-image -webkit-linear-gradient(top, #f0f0f0, #cccccc)
+	background-image linear-gradient(to bottom, #f0f0f0, #cccccc)
+	border-radius 5px
+	color #05abe0
+	padding 10px 20px 10px 20px
+	text-decoration none
+	&:hover
+		background #05abe0
+		background-image -webkit-linear-gradient(top, #05abe0, #0086d9)
+		background-image linear-gradient(to bottom, #05abe0, #0086d9)
+		color text-color
+		text-decoration none
+
+.row
+	display flex
+	flex-direction row
+	align-items center
+	margin-bottom 10px
+	label 
+		display block
+		width 154px
+	input
+		display block
+		width 154px
+
+.column
+	display flex
+	flex-direction column
+	align-items flex-start
+	margin-bottom 10px
+	> *
+		display block
+		width 100%
+
+.divider 
+	border 1px solid #cccccc
+	margin 10px 0
+
+#css_editor_container
+	padding 5px
+	border-radius 4px
+	border 1px solid #aaa
+	transition border .3s
+	transition box-shadow .3s
+	&:has(.ace_focus)
+		outline 0
+		box-shadow 0 0 7px #0086d9
+		border 1px solid #0086d9
+
+#css_editor
+	font-size 16px
+
+.toggle
+	display flex
+	position relative
+	margin-bottom 10px
+	label
+		position relative
+		display flex
+		align-items center
+		.toggle_label-text
+			width 154px
+		.toggle_switch
+			display block
+			position relative
+			cursor pointer
+			width 100px
+			height 32px
+			border-radius 4px
+			background-color #ccc
+			color #aaa
+			&::before
+				content attr(data-unchecked)
+				display block
+				position absolute
+				top 8px
+				right 7px
+				border-radius 4px
+			&::after
+				content ""
+				position absolute
+				top 2px
+				left 2px
+				width 44px
+				height 28px
+				background-color aliceblue
+				border-radius 4px
+			&, &::before, &::after
+				transition all .3s
+	input[type="checkbox"]
+		position absolute
+		top 0
+		left 0
+		opacity 0
+		&:checked ~ label .toggle_switch
+			background-color #05abe0
+			&::before
+				content attr(data-checked)
+				left 7px
+				right auto
+				color aliceblue
+			&::after
+				left 54px
+
+#buttons
+	display flex
+	flex-direction row
+	flex-wrap wrap
+	button
+		margin 0 10px

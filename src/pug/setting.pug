@@ -1,0 +1,86 @@
+doctype html
+html(lang="ja")
+	head
+		meta(charset="UTF-8")
+		//- meta(http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'")
+		link(rel="preconnect", href="https://fonts.googleapis.com")
+		link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+		link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap")
+		link(rel="stylesheet", href="setting.css")
+	body
+		form(name="setting", id="setting")
+			fieldset
+				legend 配信URLからチャットURLを取得する
+				.column
+					label(for="yt_stream_url") YouTube配信URL
+					input#yt_stream_url(type="url", name="yt_stream_url")
+				button#get_chat_url_btn(type="button") 取得
+
+			.divider
+
+			.column
+				label(for="url") URL
+				input#url(type="url", name="url", required)
+
+			.divider
+			
+			fieldset
+				legend ウィンドウサイズ(px)
+				.row
+					label(for="width") 幅
+					input#width(type="number", name="width", required)
+
+				.row
+					label(for="height") 高さ
+					input#height(type="number", name="height", required)
+
+			.divider
+
+			fieldset
+				legend 画面左上からのウィンドウ位置(px)
+				.row
+					label(for="x") 水平方向
+					input#x(type="number", name="x", required)
+
+				.row
+					label(for="y") 垂直方向
+					input#y(type="number", name="y", required)
+
+			.divider
+
+			.column
+				label カスタムCSS
+				#css_editor_container
+					#css_editor
+
+			.divider
+
+			fieldset
+				legend オプション
+				.toggle
+					input#minimizable(type="checkbox", name="minimizable")
+					label(for="minimizable")
+						.toggle_label-text 最小化可能にする
+						.toggle_switch(data-checked="Yes", data-unchecked="No")
+
+				.toggle
+					input#resizable(type="checkbox", name="resizable")
+					label(for="resizable")
+						.toggle_label-text リサイズ可能にする
+						.toggle_switch(data-checked="Yes", data-unchecked="No")
+
+				.toggle
+					input#movable(type="checkbox", name="movable")
+					label(for="movable")
+						.toggle_label-text 移動可能にする
+						.toggle_switch(data-checked="Yes", data-unchecked="No")
+
+			fieldset#buttons
+				button#save(type="submit") 保存
+				button#open(type="submit") 開く
+				button#close(type="button") 閉じる
+
+
+			script(src="./ace/src/ace.js")
+			script(src="./ace/src/ext-language_tools.js") 
+			script(src="./setting.js")
