@@ -68,6 +68,11 @@ switch (command) {
 	case 'release:all':
 		release(process.platform, 'all');
 		break;
+	case 'make':
+		makeInstaller()
+			.then(() => console.log('Installer was created.'))
+			.catch(err => console.error(err))
+		break
 	case 'ace':
 		installAce();
 		break;
@@ -167,6 +172,24 @@ function release(platform, arch) {
 	packager(option)
 		.then(data => console.log(data))
 		.catch(err => console.error(err));
+}
+
+function makeInstaller() {
+	return new Promise((resolve, reject) => {
+		switch (process.platform) {
+			case 'win32':
+				exec('Compil32.exe /cc installer\\Setup.iss', (err, stdout, stderr) => {
+					if (err) reject(err)
+					else resolve(stdout)
+				})
+				break
+			case 'darwin':
+				reject(new Error('インストーラは不要です'))
+				break
+			default:
+				reject(new Error("インストーラ作成方法ないよ"))
+		}
+	})
 }
 
 function startWatch() {

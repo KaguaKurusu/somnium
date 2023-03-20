@@ -15,6 +15,7 @@
 		"package": "node . package",
 		"icon": "node . icon",
 		"ace": "node . ace",
+		"make": "node . make",
 		"clean": "node . clean"
 	},
 	"author": "Kagua Kurusu",
