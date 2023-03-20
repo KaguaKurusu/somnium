@@ -1,7 +1,6 @@
 # Somnium
 背景透過＆フレームレスな簡易ブラウザ  
-[![CocoaPods](https://img.shields.io/badge/license-MIT-blue.svg)]
-(https://github.com/KaguaKurusu/somnium/blob/master/LICENSE)
+[![MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/KaguaKurusu/somnium/blob/master/LICENSE)
 
 ## このソフトウェアについて
 SomniumはOBS Studioのブラウザソースと同様のことを実現するために[Electron](https://www.electronjs.org/)を用いて作成されたソフトウェアです。  
