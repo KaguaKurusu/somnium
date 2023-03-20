@@ -19,10 +19,14 @@ Windows 64bit、32bit、ARM 64bit
 ARM 64bit環境は持ち合わせていないため、全く動作確認していないことをご承知ください。
 
 ## インストール方法
-[releases](https://github.com/KaguaKurusu/somnium/releases)よりSomniumSetup.exeをダウンロードして実行してください。
+[releases](https://github.com/KaguaKurusu/somnium/releases)より自身の環境にあったファイルをダウンロードして、任意のフォルダ内に展開してください。  
+* Windows ARM: somnium-win32-arm64.zip
+* Windows 32bit: somnium-win32-ia32.zip
+* Windows 64bit: somnium-win32-x64.zip
 
 ## アンインストール方法
-「プログラムのアンインストールと変更」よりアンインストールを実行してください。  
+フォルダごと削除してください。  
+%appdata%\somniumフォルダ内に設定ファイルがあるため、不要な場合は削除してください。
 
 ## 配信URLからチャットURLを取得する機能に関して
 下記のいずれかのURLをYouTube配信URLのテキストボックスに入力し、取得ボタンをクリックすると、URLのテキストボックスにライブチャットのURLが自動入力されます。

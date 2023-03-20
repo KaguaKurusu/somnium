@@ -9,7 +9,6 @@
 		"build": "npm run stylus && npm run pug && npm run js && npm run package && npm run icon && npm run ace",
 		"release": "node . release",
 		"release:all": "node . release:all",
-		"make": "node . make",
 		"stylus": "node . stylus",
 		"pug": "node . pug",
 		"js": "node . js",
