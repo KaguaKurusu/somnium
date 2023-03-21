@@ -1,4 +1,4 @@
-#define MyAppName "Somnium"
+ï»¿#define MyAppName "Somnium"
 #define MyAppVersion "0.1.0"
 #define MyAppURL "https://github.com/KaguaKurusu/somnium"
 #define MyAppExeName "somnium.exe"
@@ -17,7 +17,7 @@ AppUpdatesURL={#MyAppURL}
 SetupIconFile=..\icon\win\app.ico
 DefaultDirName={pf}\{#MyAppName}
 DisableProgramGroupPage=yes
-LicenseFile=LICENSE
+LicenseFile=..\LICENSE
 OutputDir=..\build\Installer
 OutputBaseFilename={#MyAppName}Setup
 Compression=lzma
@@ -31,8 +31,8 @@ UninstallDisplayName={#MyAppName}
 Name: ja; MessagesFile: "compiler:Languages\Japanese.isl"
 
 [CustomMessages]
-ja.MyAppPublisher=—ˆ²‰Øgéë
-ja.DeleteSettingsData=İ’èƒtƒ@ƒCƒ‹‚ğíœ‚µ‚Ü‚·‚©H
+ja.MyAppPublisher=æ¥æ –è¯ç´…é´‰
+ja.DeleteSettingsData=è¨­å®šãƒ•ã‚¡ã‚¤ãƒ«ã‚’å‰Šé™¤ã—ã¾ã™ã‹ï¼Ÿ
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
